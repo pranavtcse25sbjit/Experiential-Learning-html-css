@@ -428,73 +428,58 @@
 
   <!-- SIDE NAV -->
   <div class="sidebar">
-
     <div class="sb-label">Main</div>
-
     <a class="sb-link active" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 8a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1v-4zm8-8a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V4zm0 8a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg>
       <span>Dashboard</span>
     </a>
-
     <a class="sb-link" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm0 8a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2z"/></svg>
       <span>Servers</span>
       <span class="sb-badge">4</span>
     </a>
-
     <a class="sb-link" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/></svg>
       <span>Alerts</span>
       <span class="sb-badge red">3</span>
     </a>
-
     <div class="sb-divider"></div>
     <div class="sb-label">Infrastructure</div>
-
     <a class="sb-link" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"/><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"/><path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"/></svg>
       <span>Storage</span>
     </a>
-
     <a class="sb-link" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z"/></svg>
       <span>Containers</span>
       <span class="sb-badge">5</span>
     </a>
-
     <a class="sb-link" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"/></svg>
       <span>Network</span>
     </a>
-
     <a class="sb-link" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
       <span>Services</span>
     </a>
-
     <div class="sb-divider"></div>
     <div class="sb-label">Tools</div>
-
     <a class="sb-link" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z"/></svg>
       <span>Log Viewer</span>
     </a>
-
     <a class="sb-link" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"/></svg>
       <span>Settings</span>
     </a>
-
     <a class="sb-link" href="#">
       <svg class="sb-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"/></svg>
       <span>Help</span>
     </a>
 
   </div>
-
   <!-- CONTENT -->
   <div class="content">
-
     <!-- PAGE HEADER -->
     <div class="page-head">
       <div>
@@ -506,17 +491,14 @@
         <button class="btn-primary">Run Diagnostics</button>
       </div>
     </div>
-
     <!-- ALERT -->
     <div class="alert-bar">
       <div class="alert-dot"></div>
       <div><b style="color:#f87171">Warning:</b> Redis stopped unexpectedly (OOM) &nbsp;·&nbsp; /data disk at 86% — near critical</div>
       <div style="margin-left:auto;"><span class="pill pr">2 alerts</span></div>
     </div>
-
     <!-- MAIN -->
     <div class="main">
-
       <!-- METRICS -->
       <div class="metrics">
         <div class="mcard fade-up d1"><div class="mlabel">CPU Usage</div><div class="mval" style="color:#60a5fa">63%</div><div class="msub">8 cores · load 1.84</div></div>
@@ -526,7 +508,6 @@
         <div class="mcard fade-up d5"><div class="mlabel">Network In</div><div class="mval" style="color:#a78bfa">9.2 MB/s</div><div class="msub">Out · 3.7 MB/s</div></div>
         <div class="mcard fade-up d6"><div class="mlabel">Uptime</div><div class="mval" style="color:#38bdf8">312d</div><div class="msub">7h 14m · stable</div></div>
       </div>
-
       <!-- RESOURCES + SERVICES -->
       <div class="two-col fade-up d2">
         <div class="box">
@@ -550,7 +531,6 @@
           <div class="svc slide-in d8"><div class="dot dg"></div><div class="svc-name">cron</div><div class="svc-port">system</div><div class="svc-mem">4 MB</div><div class="pill pg">Running</div></div>
         </div>
       </div>
-
       <!-- NETWORK + STORAGE -->
       <div class="three-col fade-up d3">
         <div class="box">
@@ -575,7 +555,6 @@
           <div class="stor"><div class="stor-ico">🐳</div><div class="stor-info"><div class="stor-name">Docker</div><div class="stor-path">/var/lib/docker</div><div class="stor-bar"><div class="stor-fill" style="width:29%;background:#8b5cf6"></div></div></div><div class="stor-sz">29/100 GB</div></div>
         </div>
       </div>
-
       <!-- EVENTS + LOG -->
       <div class="two-col fade-up d4">
         <div class="box">
@@ -612,7 +591,6 @@
           </div>
         </div>
       </div>
-
       <!-- DOCKER -->
       <div class="box fade-up d5">
         <div class="box-title">Docker Containers</div>
@@ -629,9 +607,7 @@
           </table>
         </div>
       </div>
-
     </div>
-
     <!-- FOOTER -->
     <footer>
       <div class="footer-grid">
