@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ServerPanel — Admin Dashboard</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServerPanel — Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="tc" id="tc"></div>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg topnav sticky-top py-0" style="height:56px">
   <div class="container-fluid px-3">
-    <a class="navbar-brand fw-bold" href="#" onclick="go('dash');return false">
+    <a class="navbar-brand fw-bold" href="#">
       <i class="bi bi-server me-2" style="color:#38bdf8"></i>Server<span>Panel</span>
     </a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nC">
@@ -24,14 +22,14 @@
     </button>
     <div class="collapse navbar-collapse" id="nC">
       <ul class="navbar-nav ms-3 gap-1">
-        <li><a class="nav-link active" id="n-dash"    href="#" onclick="go('dash');return false"><i class="bi bi-grid me-1"></i>Dashboard</a></li>
-        <li><a class="nav-link"        id="n-servers" href="#" onclick="go('servers');return false"><i class="bi bi-hdd-stack me-1"></i>Servers</a></li>
-        <li><a class="nav-link"        id="n-logs"    href="#" onclick="go('logs');return false"><i class="bi bi-journal-text me-1"></i>Logs</a></li>
-        <li><a class="nav-link"        id="n-alerts"  href="#" onclick="go('alerts');return false"><i class="bi bi-bell me-1"></i>Alerts <span class="badge bg-danger" style="font-size:9px" id="alCnt">2</span></a></li>
-        <li><a class="nav-link"        id="n-settings"href="#" onclick="go('settings');return false"><i class="bi bi-gear me-1"></i>Settings</a></li>
+        <li><a class="nav-link active" href="#"><i class="bi bi-grid me-1"></i>Dashboard</a></li>
+        <li><a class="nav-link" href="#"><i class="bi bi-hdd-stack me-1"></i>Servers</a></li>
+        <li><a class="nav-link" href="#"><i class="bi bi-journal-text me-1"></i>Logs</a></li>
+        <li><a class="nav-link" href="#"><i class="bi bi-bell me-1"></i>Alerts</a></li>
+        <li><a class="nav-link" href="#"><i class="bi bi-gear me-1"></i>Settings</a></li>
       </ul>
       <div class="ms-auto d-flex align-items-center gap-3 my-2 my-lg-0">
-        <span class="clk" id="clk">--:--:--</span>
+        <span class="clk">14:32:45</span>
         <span class="live-d"></span><span class="live-t">All systems up</span>
         <div class="av">AK</div>
       </div>
@@ -44,31 +42,31 @@
   <!-- SIDEBAR -->
   <div class="sidebar d-none d-lg-flex flex-column pt-2">
     <div class="sb-lbl mt-1">Main</div>
-    <button class="sb-a active" id="s-dash"    onclick="go('dash')"><i class="bi bi-grid-fill"></i>Dashboard</button>
-    <button class="sb-a"        id="s-servers" onclick="go('servers')"><i class="bi bi-hdd-stack"></i>Servers
+    <button class="sb-a active"><i class="bi bi-grid-fill"></i>Dashboard</button>
+    <button class="sb-a"><i class="bi bi-hdd-stack"></i>Servers
       <span class="ms-auto badge rounded-pill" style="background:rgba(56,189,248,.12);color:#38bdf8;font-size:10px">4</span>
     </button>
-    <button class="sb-a"        id="s-alerts"  onclick="go('alerts')"><i class="bi bi-bell"></i>Alerts
-      <span class="ms-auto badge rounded-pill bg-danger" style="font-size:10px" id="sbAlCnt">2</span>
+    <button class="sb-a"><i class="bi bi-bell"></i>Alerts
+      <span class="ms-auto badge rounded-pill bg-danger" style="font-size:10px">2</span>
     </button>
     <div class="sb-hr"></div>
     <div class="sb-lbl">Infrastructure</div>
-    <button class="sb-a" id="s-logs"    onclick="go('logs')"><i class="bi bi-terminal"></i>Log Viewer</button>
-    <button class="sb-a" onclick="go('dash')"><i class="bi bi-database"></i>Storage</button>
-    <button class="sb-a" onclick="go('servers')"><i class="bi bi-box"></i>Containers
+    <button class="sb-a"><i class="bi bi-terminal"></i>Log Viewer</button>
+    <button class="sb-a"><i class="bi bi-database"></i>Storage</button>
+    <button class="sb-a"><i class="bi bi-box"></i>Containers
       <span class="ms-auto badge rounded-pill" style="background:rgba(56,189,248,.12);color:#38bdf8;font-size:10px">5</span>
     </button>
-    <button class="sb-a" onclick="go('dash')"><i class="bi bi-diagram-3"></i>Network</button>
+    <button class="sb-a"><i class="bi bi-diagram-3"></i>Network</button>
     <div class="sb-hr"></div>
     <div class="sb-lbl">Tools</div>
-    <button class="sb-a" id="s-settings" onclick="go('settings')"><i class="bi bi-gear"></i>Settings</button>
-    <button class="sb-a" onclick="toast('Help center coming soon','info')"><i class="bi bi-question-circle"></i>Help</button>
+    <button class="sb-a"><i class="bi bi-gear"></i>Settings</button>
+    <button class="sb-a"><i class="bi bi-question-circle"></i>Help</button>
   </div>
 
   <div class="flex-grow-1" style="min-width:0">
 
-    <!-- ═══ PAGE: DASHBOARD ═══ -->
-    <div class="page active" id="p-dash">
+    <!-- PAGE: DASHBOARD -->
+    <div class="page active">
 
       <!-- Header -->
       <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 px-4 py-3"
@@ -77,21 +75,21 @@
           <h1 class="fs-5 fw-bold text-white mb-0">Server Dashboard</h1>
           <p class="mb-0 mt-1 mono" style="font-size:12px;color:#64748b">
             <i class="bi bi-circle-fill me-1" style="color:#10b981;font-size:8px"></i>
-            prod-server-01 · Ubuntu 22.04 · <span id="hTime">--:--</span>
+            prod-server-01 · Ubuntu 22.04 · 14:32
           </p>
         </div>
         <div class="d-flex gap-2">
-          <button class="btn btn-sm btn-outline-secondary" onclick="exportRep()"><i class="bi bi-download me-1"></i>Export</button>
-          <button class="btn btn-sm btn-outline-secondary" onclick="refreshAll()"><i class="bi bi-arrow-clockwise me-1"></i>Refresh</button>
-          <button class="btn btn-sm btn-primary" onclick="runDiag()"><i class="bi bi-play-fill me-1"></i>Diagnostics</button>
+          <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-download me-1"></i>Export</button>
+          <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-clockwise me-1"></i>Refresh</button>
+          <button class="btn btn-sm btn-primary"><i class="bi bi-play-fill me-1"></i>Diagnostics</button>
         </div>
       </div>
 
       <!-- Alert bar -->
       <div class="abar">
         <span class="adot"></span>
-        <span><b style="color:#f87171">Warning:</b> Redis stopped (OOM) · /data disk at <span id="dDa">86</span>% — critical</span>
-        <span class="ms-auto pill pr" style="cursor:pointer" onclick="go('alerts')">2 alerts</span>
+        <span><b style="color:#f87171">Warning:</b> Redis stopped (OOM) · /data disk at 86% — critical</span>
+        <span class="ms-auto pill pr" style="cursor:pointer">2 alerts</span>
       </div>
 
       <div class="container-fluid p-3 p-lg-4">
@@ -100,13 +98,13 @@
         <div class="row g-3 mb-3">
           <div class="col-6 col-md-4 col-xl-2"><div class="sc card border-0 p-3 h-100 d1">
             <div class="sc-lbl mb-1"><i class="bi bi-cpu me-1"></i>CPU</div>
-            <div class="sc-val" style="color:#60a5fa" id="cpuV">63%</div>
-            <div class="sc-sub">8 cores · load <span id="ldV">1.84</span></div>
+            <div class="sc-val" style="color:#60a5fa">63%</div>
+            <div class="sc-sub">8 cores · load 1.84</div>
           </div></div>
           <div class="col-6 col-md-4 col-xl-2"><div class="sc card border-0 p-3 h-100 d2">
             <div class="sc-lbl mb-1"><i class="bi bi-memory me-1"></i>RAM</div>
-            <div class="sc-val" style="color:#34d399" id="ramV">11.2 GB</div>
-            <div class="sc-sub">of 16 GB <span class="tag tg" id="ramT">70%</span></div>
+            <div class="sc-val" style="color:#34d399">11.2 GB</div>
+            <div class="sc-sub">of 16 GB <span class="tag tg">70%</span></div>
           </div></div>
           <div class="col-6 col-md-4 col-xl-2"><div class="sc card border-0 p-3 h-100 d3">
             <div class="sc-lbl mb-1"><i class="bi bi-hdd me-1"></i>Disk /</div>
@@ -115,18 +113,18 @@
           </div></div>
           <div class="col-6 col-md-4 col-xl-2"><div class="sc card border-0 p-3 h-100 d4">
             <div class="sc-lbl mb-1"><i class="bi bi-hdd-fill me-1"></i>Disk /data</div>
-            <div class="sc-val" style="color:#f87171" id="dDV">430 GB</div>
-            <div class="sc-sub">of 500 GB <span class="tag tr-tag" id="dDP">86%</span></div>
+            <div class="sc-val" style="color:#f87171">430 GB</div>
+            <div class="sc-sub">of 500 GB <span class="tag tr-tag">86%</span></div>
           </div></div>
           <div class="col-6 col-md-4 col-xl-2"><div class="sc card border-0 p-3 h-100 d5">
             <div class="sc-lbl mb-1"><i class="bi bi-arrow-down-up me-1"></i>Network</div>
-            <div class="sc-val" style="color:#a78bfa" id="nIV">9.2 MB/s</div>
-            <div class="sc-sub">Out · <span id="nOV">3.7</span> MB/s</div>
+            <div class="sc-val" style="color:#a78bfa">9.2 MB/s</div>
+            <div class="sc-sub">Out · 3.7 MB/s</div>
           </div></div>
           <div class="col-6 col-md-4 col-xl-2"><div class="sc card border-0 p-3 h-100 d6">
             <div class="sc-lbl mb-1"><i class="bi bi-clock me-1"></i>Uptime</div>
-            <div class="sc-val" style="color:#38bdf8" id="upV">312d</div>
-            <div class="sc-sub" id="upS">7h 14m · stable</div>
+            <div class="sc-val" style="color:#38bdf8">312d</div>
+            <div class="sc-sub">7h 14m · stable</div>
           </div></div>
         </div>
 
@@ -135,21 +133,53 @@
           <div class="col-lg-6">
             <div class="box p-3 h-100">
               <div class="box-t mb-3"><i class="bi bi-bar-chart-line me-2"></i>Resource Usage</div>
-              <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span class="p-lbl">CPU</span><span class="p-info">8 cores</span><b class="p-pct" style="color:#60a5fa" id="cpuP">63%</b></div><div class="pt"><div class="pf" id="cpuB" style="width:63%;background:#3b82f6"></div></div></div>
-              <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span class="p-lbl">RAM</span><span class="p-info" id="ramI">11.2/16 GB</span><b class="p-pct" style="color:#34d399" id="ramP">70%</b></div><div class="pt"><div class="pf" id="ramB" style="width:70%;background:#10b981"></div></div></div>
-              <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span class="p-lbl">Disk /</span><span class="p-info">68/100 GB</span><b class="p-pct" style="color:#fbbf24">68%</b></div><div class="pt"><div class="pf" style="width:68%;background:#f59e0b"></div></div></div>
-              <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span class="p-lbl">Disk /data</span><span class="p-info" id="dDI">430/500 GB</span><b class="p-pct" style="color:#f87171" id="dDPb">86%</b></div><div class="pt"><div class="pf" id="dDB" style="width:86%;background:#ef4444"></div></div></div>
-              <div class="mb-3"><div class="d-flex justify-content-between mb-1"><span class="p-lbl">Swap</span><span class="p-info">1.1/8 GB</span><b class="p-pct" style="color:#a78bfa" id="swP">14%</b></div><div class="pt"><div class="pf" id="swB" style="width:14%;background:#8b5cf6"></div></div></div>
-              <div><div class="d-flex justify-content-between mb-1"><span class="p-lbl">Network BW</span><span class="p-info" id="nBI">9.2 MB/s</span><b class="p-pct" style="color:#22d3ee" id="nBP">46%</b></div><div class="pt"><div class="pf" id="nBB" style="width:46%;background:#06b6d4"></div></div></div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1"><span class="p-lbl">CPU</span><span class="p-info">8 cores</span><b class="p-pct" style="color:#60a5fa">63%</b></div>
+                <div class="pt"><div class="pf" style="width:63%;background:#60a5fa"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1"><span class="p-lbl">RAM</span><span class="p-info">11.2/16 GB</span><b class="p-pct" style="color:#34d399">70%</b></div>
+                <div class="pt"><div class="pf" style="width:70%;background:#34d399"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1"><span class="p-lbl">Disk /</span><span class="p-info">68/100 GB</span><b class="p-pct" style="color:#fbbf24">68%</b></div>
+                <div class="pt"><div class="pf" style="width:68%;background:#fbbf24"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1"><span class="p-lbl">Disk /data</span><span class="p-info">430/500 GB</span><b class="p-pct" style="color:#f87171">86%</b></div>
+                <div class="pt"><div class="pf" style="width:86%;background:#f87171"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1"><span class="p-lbl">Swap</span><span class="p-info">1.1/8 GB</span><b class="p-pct" style="color:#a78bfa">14%</b></div>
+                <div class="pt"><div class="pf" style="width:14%;background:#a78bfa"></div></div>
+              </div>
+              <div>
+                <div class="d-flex justify-content-between mb-1"><span class="p-lbl">Network BW</span><span class="p-info">9.2 MB/s</span><b class="p-pct" style="color:#22d3ee">92%</b></div>
+                <div class="pt"><div class="pf" style="width:92%;background:#22d3ee"></div></div>
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="box p-3 h-100">
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <div class="box-t"><i class="bi bi-activity me-2"></i>Services</div>
-                <button class="btn btn-sm btn-outline-secondary py-0 px-2" style="font-size:11px" onclick="drawSvcs();toast('Refreshed','success')"><i class="bi bi-arrow-clockwise"></i></button>
+              <div class="box-t mb-3"><i class="bi bi-activity me-2"></i>Services</div>
+              <div class="svc-r">
+                <div class="d-flex justify-content-between"><span>nginx</span><span class="badge bg-success">Running</span></div>
               </div>
-              <div id="svcC"></div>
+              <div class="svc-r">
+                <div class="d-flex justify-content-between"><span>postgres</span><span class="badge bg-success">Running</span></div>
+              </div>
+              <div class="svc-r">
+                <div class="d-flex justify-content-between"><span>redis</span><span class="badge bg-danger">Stopped</span></div>
+              </div>
+              <div class="svc-r">
+                <div class="d-flex justify-content-between"><span>node</span><span class="badge bg-success">Running</span></div>
+              </div>
+              <div class="svc-r">
+                <div class="d-flex justify-content-between"><span>elasticsearch</span><span class="badge bg-warning">Degraded</span></div>
+              </div>
+              <div class="svc-r">
+                <div class="d-flex justify-content-between"><span>docker</span><span class="badge bg-success">Running</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -162,7 +192,12 @@
               <div class="table-responsive">
                 <table class="dt">
                   <thead><tr><th>Interface</th><th>IP</th><th class="d-none d-md-table-cell">In</th><th class="d-none d-md-table-cell">Out</th><th>Conn</th><th>Status</th></tr></thead>
-                  <tbody id="netTb"></tbody>
+                  <tbody>
+                    <tr><td>eth0</td><td>10.0.1.12</td><td class="d-none d-md-table-cell">9.2</td><td class="d-none d-md-table-cell">3.7</td><td>214</td><td><span class="badge bg-success">Up</span></td></tr>
+                    <tr><td>eth1</td><td>192.168.1.5</td><td class="d-none d-md-table-cell">0.4</td><td class="d-none d-md-table-cell">0.1</td><td>18</td><td><span class="badge bg-success">Up</span></td></tr>
+                    <tr><td>lo</td><td>127.0.0.1</td><td class="d-none d-md-table-cell">12.1</td><td class="d-none d-md-table-cell">12.1</td><td>842</td><td><span class="badge bg-success">Up</span></td></tr>
+                    <tr><td>docker0</td><td>172.17.0.1</td><td class="d-none d-md-table-cell">1.8</td><td class="d-none d-md-table-cell">0.9</td><td>56</td><td><span class="badge bg-warning">Warn</span></td></tr>
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -170,7 +205,22 @@
           <div class="col-lg-4">
             <div class="box p-3 h-100">
               <div class="box-t mb-3"><i class="bi bi-hdd-stack me-2"></i>Storage</div>
-              <div id="stgC"></div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1"><span style="font-size:13px">System /</span><span style="font-size:11px;color:#64748b">68/100 GB</span></div>
+                <div class="stb"><div class="stf" style="width:68%;background:#fbbf24"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1"><span style="font-size:13px">Data /data</span><span style="font-size:11px;color:#64748b">430/500 GB</span></div>
+                <div class="stb"><div class="stf" style="width:86%;background:#f87171"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1"><span style="font-size:13px">Backups</span><span style="font-size:11px;color:#64748b">820/2000 GB</span></div>
+                <div class="stb"><div class="stf" style="width:41%;background:#34d399"></div></div>
+              </div>
+              <div>
+                <div class="d-flex justify-content-between mb-1"><span style="font-size:13px">Docker</span><span style="font-size:11px;color:#64748b">29/100 GB</span></div>
+                <div class="stb"><div class="stf" style="width:29%;background:#60a5fa"></div></div>
+              </div>
             </div>
           </div>
         </div>
@@ -180,28 +230,30 @@
           <div class="col-lg-4">
             <div class="box p-3 h-100">
               <div class="box-t mb-3"><i class="bi bi-lightning me-2"></i>Recent Events</div>
-              <div id="evC"></div>
+              <div style="font-size:12px;line-height:2">
+                <div>14:32 <span style="color:#10b981">✓</span> Health check passed</div>
+                <div>14:31 <span style="color:#ef4444">✗</span> Redis stopped</div>
+                <div>14:31 <span style="color:#fbbf24">!</span> Slow query</div>
+                <div>14:30 <span style="color:#10b981">✓</span> Backup completed</div>
+                <div>14:29 <span style="color:#38bdf8">◌</span> Worker recycled</div>
+              </div>
             </div>
           </div>
           <div class="col-lg-8">
             <div class="box p-3 h-100">
-              <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
-                <div class="box-t"><i class="bi bi-terminal me-2"></i>Live Log</div>
-                <div class="d-flex gap-2 align-items-center">
-                  <span class="lc lcr on" id="cErr" onclick="filterLog('err')">0 ERR</span>
-                  <span class="lc lca"    id="cWarn" onclick="filterLog('warn')">0 WARN</span>
-                  <span class="lc lcb on" id="cInfo" onclick="filterLog('info')">0 INFO</span>
-                  <button class="btn btn-sm btn-outline-secondary py-0 px-2" onclick="clearLog()"><i class="bi bi-trash3"></i></button>
-                  <button class="btn btn-sm btn-outline-secondary py-0 px-2" onclick="pauseLog()" id="pBtn"><i class="bi bi-pause-fill"></i></button>
-                  <button class="btn btn-sm btn-outline-secondary py-0 px-2" onclick="dlLog()"><i class="bi bi-download"></i></button>
-                </div>
-              </div>
-              <textarea class="log" style="height:190px" readonly id="logA"></textarea>
-              <div class="row g-2 mt-1">
+              <div class="box-t mb-3"><i class="bi bi-terminal me-2"></i>System Log</div>
+              <pre class="log" style="height:190px">[2026-05-06 14:32:45] [INFO] nginx GET /api/health 3ms
+[2026-05-06 14:31:22] [ERROR] redis exited unexpectedly
+[2026-05-06 14:30:18] [WARN] disk usage high on /data: 86%
+[2026-05-06 14:29:45] [INFO] backup completed successfully
+[2026-05-06 14:28:33] [WARN] memory pressure detected
+[2026-05-06 14:27:15] [INFO] postgres connection pool: 42/50
+[2026-05-06 14:26:08] [DEBUG] cache hit ratio: 87%</pre>
+              <div class="row g-2 mt-2">
                 <div class="col-6 col-md-3"><div class="si p-2"><div class="si-l"><i class="bi bi-ubuntu me-1"></i>OS</div><div class="si-v">Ubuntu 22.04</div><div class="si-s">LTS Jammy</div></div></div>
                 <div class="col-6 col-md-3"><div class="si p-2"><div class="si-l"><i class="bi bi-layers me-1"></i>Kernel</div><div class="si-v">6.5.0-21</div><div class="si-s">x86_64</div></div></div>
-                <div class="col-6 col-md-3"><div class="si p-2"><div class="si-l"><i class="bi bi-speedometer2 me-1"></i>Load</div><div class="si-v" id="ldVal">1.84</div><div class="si-s">1m avg</div></div></div>
-                <div class="col-6 col-md-3"><div class="si p-2"><div class="si-l"><i class="bi bi-thermometer-half me-1"></i>Temp</div><div class="si-v" style="color:#fbbf24" id="tmpV">58°C</div><div class="si-s">safe</div></div></div>
+                <div class="col-6 col-md-3"><div class="si p-2"><div class="si-l"><i class="bi bi-speedometer2 me-1"></i>Load</div><div class="si-v">1.84</div><div class="si-s">1m avg</div></div></div>
+                <div class="col-6 col-md-3"><div class="si p-2"><div class="si-l"><i class="bi bi-thermometer-half me-1"></i>Temp</div><div class="si-v" style="color:#fbbf24">58°C</div><div class="si-s">Normal</div></div></div>
               </div>
             </div>
           </div>
@@ -211,187 +263,23 @@
         <div class="row g-3 mb-3">
           <div class="col-12">
             <div class="box p-3">
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <div class="box-t"><i class="bi bi-box me-2"></i>Docker Containers</div>
-                <button class="btn btn-sm btn-outline-secondary py-0 px-2" style="font-size:11px"
-                  onclick="S.ctrs.forEach(c=>{if(c.st==='running')c.cpu=rnd(.5,25,1)});drawCtrs();toast('Refreshed','success')"><i class="bi bi-arrow-clockwise"></i></button>
-              </div>
+              <div class="box-t mb-3"><i class="bi bi-box me-2"></i>Docker Containers</div>
               <div class="table-responsive">
                 <table class="dt">
-                  <thead><tr><th>Container</th><th>Image</th><th class="d-none d-md-table-cell">Ports</th><th>CPU</th><th>Mem</th><th>Uptime</th><th>Status</th><th>Action</th></tr></thead>
-                  <tbody id="ctrTb"></tbody>
+                  <thead><tr><th>Container</th><th>Image</th><th class="d-none d-md-table-cell">Ports</th><th>CPU</th><th>Mem</th><th>Uptime</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>app_web_1</td><td>node:20-alpine</td><td class="d-none d-md-table-cell">3000→3000</td><td>4.2%</td><td>210 MB</td><td>6d 12h</td><td><span class="badge bg-success">Running</span></td></tr>
+                    <tr><td>app_worker_3</td><td>node:20-alpine</td><td class="d-none d-md-table-cell">—</td><td>18.7%</td><td>340 MB</td><td>6d 12h</td><td><span class="badge bg-success">Running</span></td></tr>
+                    <tr><td>pg_primary</td><td>postgres:16</td><td class="d-none d-md-table-cell">5432→5432</td><td>9.1%</td><td>512 MB</td><td>12d 3h</td><td><span class="badge bg-success">Running</span></td></tr>
+                    <tr><td>redis_cache</td><td>redis:7-alpine</td><td class="d-none d-md-table-cell">6379→6379</td><td>—</td><td>—</td><td>Exited</td><td><span class="badge bg-danger">Exited</span></td></tr>
+                    <tr><td>prometheus</td><td>prom/prometheus</td><td class="d-none d-md-table-cell">9090→9090</td><td>1.4%</td><td>156 MB</td><td>30d 0h</td><td><span class="badge bg-success">Running</span></td></tr>
+                  </tbody>
                 </table>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- QUICK ACTIONS + LOG SEARCH -->
-        <div class="row g-3 mb-3">
-          <div class="col-lg-6">
-            <div class="box p-3 h-100">
-              <div class="box-t mb-3"><i class="bi bi-sliders me-2"></i>Quick Actions</div>
-              <div class="mb-3"><label class="fl">Server</label>
-                <select class="form-select form-select-sm fs" id="aServer">
-                  <option>prod-server-01 (current)</option><option>prod-server-02</option>
-                  <option>staging-server-01</option><option>dev-server-01</option>
-                </select></div>
-              <div class="mb-3"><label class="fl">Action</label>
-                <select class="form-select form-select-sm fs" id="aType">
-                  <option value="restart">Restart service</option><option value="diag">Run diagnostics</option>
-                  <option value="cache">Clear cache</option><option value="backup">Force backup</option>
-                  <option value="rotate">Rotate logs</option>
-                </select></div>
-              <div class="mb-3"><label class="fl">Target Service</label>
-                <input class="form-control form-control-sm fd" id="aTgt" placeholder="e.g. redis, nginx"></div>
-              <div class="mb-3"><label class="fl">Notes</label>
-                <textarea class="form-control form-control-sm fd" rows="2" id="aNotes" placeholder="Reason..."></textarea></div>
-              <div class="mb-3 d-flex gap-3">
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="aNot" checked><label class="form-check-label" for="aNot">Notify team</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="aLog" checked><label class="form-check-label" for="aLog">Log action</label></div>
-              </div>
-              <div class="d-flex gap-2">
-                <button class="btn btn-sm btn-primary px-3" onclick="execAction()"><i class="bi bi-play-fill me-1"></i>Execute</button>
-                <button class="btn btn-sm btn-outline-secondary px-3" onclick="clearForm()"><i class="bi bi-x me-1"></i>Clear</button>
-              </div>
-              <div id="aRes" class="mt-3" style="display:none"></div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="box p-3 h-100">
-              <div class="box-t mb-3"><i class="bi bi-search me-2"></i>Search Logs</div>
-              <div class="mb-3">
-                <div class="input-group input-group-sm">
-                  <span class="input-group-text" style="background:rgba(10,16,32,.8);border-color:rgba(255,255,255,.1);color:#64748b"><i class="bi bi-search"></i></span>
-                  <input class="form-control fd" id="lSrch" placeholder="Search logs…" oninput="searchLog()">
-                </div>
-              </div>
-              <div class="row g-2 mb-3">
-                <div class="col-6"><label class="fl">Level</label>
-                  <select class="form-select form-select-sm fs" id="lLvl" onchange="searchLog()">
-                    <option value="all">All</option><option value="error">ERROR</option>
-                    <option value="warn">WARN</option><option value="info">INFO</option>
-                  </select></div>
-                <div class="col-6"><label class="fl">Service</label>
-                  <select class="form-select form-select-sm fs" id="lSvc" onchange="searchLog()">
-                    <option value="all">All</option><option>nginx</option><option>postgres</option>
-                    <option>redis</option><option>node</option><option>cron</option>
-                  </select></div>
-              </div>
-              <div class="mb-3">
-                <label class="fl">Results: <span id="srchN" style="color:#38bdf8">—</span></label>
-                <textarea class="log" style="height:130px" readonly id="srchA"></textarea>
-              </div>
-              <div class="d-flex gap-2">
-                <button class="btn btn-sm btn-primary px-3" onclick="searchLog()"><i class="bi bi-search me-1"></i>Search</button>
-                <button class="btn btn-sm btn-outline-secondary px-3" onclick="dlSearch()"><i class="bi bi-download me-1"></i>Export</button>
-                <button class="btn btn-sm btn-outline-secondary px-3" onclick="resetSearch()"><i class="bi bi-x me-1"></i>Reset</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div><!-- end dash -->
-
-    <!-- ═══ PAGE: SERVERS ═══ -->
-    <div class="page" id="p-servers">
-      <div class="d-flex align-items-center justify-content-between px-4 py-3" style="background:rgba(10,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)">
-        <div><h1 class="fs-5 fw-bold text-white mb-0">Server Fleet</h1><p class="mb-0 mono" style="font-size:12px;color:#64748b">4 servers</p></div>
-        <button class="btn btn-sm btn-primary" onclick="toast('Coming soon','info')"><i class="bi bi-plus-lg me-1"></i>Add Server</button>
-      </div>
-      <div class="container-fluid p-4"><div class="row g-3" id="srvCards"></div></div>
-    </div>
-
-    <!-- ═══ PAGE: LOGS ═══ -->
-    <div class="page" id="p-logs">
-      <div class="d-flex align-items-center justify-content-between px-4 py-3" style="background:rgba(10,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)">
-        <div><h1 class="fs-5 fw-bold text-white mb-0">Log Viewer</h1><p class="mb-0 mono" style="font-size:12px;color:#64748b">Real-time logs</p></div>
-        <div class="d-flex gap-2">
-          <button class="btn btn-sm btn-outline-secondary" onclick="clearLog()"><i class="bi bi-trash3 me-1"></i>Clear</button>
-          <button class="btn btn-sm btn-primary" onclick="dlLog()"><i class="bi bi-download me-1"></i>Download</button>
-        </div>
-      </div>
-      <div class="container-fluid p-4">
-        <div class="box p-3">
-          <div class="d-flex gap-2 mb-3 flex-wrap">
-            <input class="form-control form-control-sm fd" style="max-width:240px" placeholder="Filter…" id="fFilt" oninput="filterFull()">
-            <select class="form-select form-select-sm fs" style="max-width:150px" id="fLvl" onchange="filterFull()">
-              <option value="all">All levels</option><option value="ERROR">ERROR</option>
-              <option value="WARN">WARN</option><option value="INFO">INFO</option>
-            </select>
-            <button class="btn btn-sm btn-outline-secondary" onclick="filterFull()"><i class="bi bi-funnel me-1"></i>Filter</button>
-          </div>
-          <textarea class="log" style="height:420px" readonly id="logFull"></textarea>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ PAGE: ALERTS ═══ -->
-    <div class="page" id="p-alerts">
-      <div class="d-flex align-items-center justify-content-between px-4 py-3" style="background:rgba(10,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)">
-        <div><h1 class="fs-5 fw-bold text-white mb-0">Alerts</h1><p class="mb-0 mono" style="font-size:12px;color:#64748b">Active alerts</p></div>
-        <button class="btn btn-sm btn-outline-secondary" onclick="ackAll()"><i class="bi bi-check-all me-1"></i>Ack All</button>
-      </div>
-      <div class="container-fluid p-4"><div id="alList"></div></div>
-    </div>
-
-    <!-- ═══ PAGE: SETTINGS ═══ -->
-    <div class="page" id="p-settings">
-      <div class="px-4 py-3" style="background:rgba(10,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)">
-        <h1 class="fs-5 fw-bold text-white mb-0">Settings</h1>
-        <p class="mb-0 mono" style="font-size:12px;color:#64748b">Configuration</p>
-      </div>
-      <div class="container-fluid p-4">
-        <div class="row g-3">
-          <div class="col-lg-6">
-            <div class="box p-4">
-              <div class="ss">
-                <h6 class="text-white fw-semibold mb-3"><i class="bi bi-bell me-2" style="color:#38bdf8"></i>Alert Thresholds</h6>
-                <div class="mb-3"><label class="fl">CPU threshold (%)</label>
-                  <input type="range" class="form-range" min="50" max="99" value="85" style="accent-color:#38bdf8"
-                    oninput="document.getElementById('cTV').textContent=this.value+'%'">
-                  <div class="d-flex justify-content-between"><span style="font-size:11px;color:#475569">50%</span><span style="font-size:11px;color:#38bdf8" id="cTV">85%</span><span style="font-size:11px;color:#475569">99%</span></div>
-                </div>
-                <div class="mb-3"><label class="fl">Disk threshold (%)</label>
-                  <input type="range" class="form-range" min="50" max="99" value="80" style="accent-color:#38bdf8"
-                    oninput="document.getElementById('dTV').textContent=this.value+'%'">
-                  <div class="d-flex justify-content-between"><span style="font-size:11px;color:#475569">50%</span><span style="font-size:11px;color:#38bdf8" id="dTV">80%</span><span style="font-size:11px;color:#475569">99%</span></div>
-                </div>
-              </div>
-              <div class="ss">
-                <h6 class="text-white fw-semibold mb-3"><i class="bi bi-envelope me-2" style="color:#38bdf8"></i>Notifications</h6>
-                <div class="mb-2"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="emAl" checked><label class="form-check-label" for="emAl">Email alerts</label></div></div>
-                <div class="mb-2"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="slAl" checked><label class="form-check-label" for="slAl">Slack</label></div></div>
-                <div class="mb-3"><label class="fl">Alert email</label>
-                  <input type="email" class="form-control form-control-sm fd" value="admin@company.com"></div>
-              </div>
-              <button class="btn btn-sm btn-primary px-4" onclick="saveSettings()"><i class="bi bi-check-lg me-1"></i>Save</button>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="box p-4">
-              <div class="ss">
-                <h6 class="text-white fw-semibold mb-3"><i class="bi bi-display me-2" style="color:#38bdf8"></i>Dashboard Preferences</h6>
-                <div class="mb-3"><label class="fl">Refresh interval</label>
-                  <select class="form-select form-select-sm fs" id="rInt" onchange="setInterval2()">
-                    <option value="3000">Every 3s</option><option value="5000" selected>Every 5s</option>
-                    <option value="10000">Every 10s</option><option value="30000">Every 30s</option>
-                  </select></div>
-                <div class="mb-2"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked><label class="form-check-label">Auto-scroll log</label></div></div>
-                <div class="mb-2"><div class="form-check form-switch"><input class="form-check-input" type="checkbox"><label class="form-check-label">Sound on error</label></div></div>
-              </div>
-              <div class="ss">
-                <h6 class="text-white fw-semibold mb-3"><i class="bi bi-server me-2" style="color:#38bdf8"></i>Server Info</h6>
-                <div class="mb-2 d-flex justify-content-between"><span style="font-size:12px;color:#64748b">Hostname</span><span class="mono" style="font-size:12px;color:#e2e8f0">prod-server-01</span></div>
-                <div class="mb-2 d-flex justify-content-between"><span style="font-size:12px;color:#64748b">IP</span><span class="mono" style="font-size:12px;color:#e2e8f0">10.0.1.12</span></div>
-                <div class="mb-2 d-flex justify-content-between"><span style="font-size:12px;color:#64748b">OS</span><span class="mono" style="font-size:12px;color:#e2e8f0">Ubuntu 22.04 LTS</span></div>
-                <div class="mb-2 d-flex justify-content-between"><span style="font-size:12px;color:#64748b">Version</span><span class="mono" style="font-size:12px;color:#38bdf8">v4.2.1</span></div>
-              </div>
-              <button class="btn btn-sm btn-outline-danger" onclick="resetSettings()"><i class="bi bi-arrow-counterclockwise me-1"></i>Reset</button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -400,46 +288,42 @@
       <div class="row g-4 mb-3">
         <div class="col-lg-4 col-md-6">
           <div class="ft-b mb-2"><i class="bi bi-server me-2" style="color:#38bdf8"></i>Server<span>Panel</span></div>
-          <p style="font-size:13px;color:#475569;line-height:1.7;max-width:240px">Fully working server admin dashboard — real-time metrics, live logs, Bootstrap 5.</p>
+          <p style="font-size:13px;color:#475569;line-height:1.7;max-width:240px">Fully static server admin dashboard — real-time metrics, logs, with Bootstrap 5 and pure CSS.</p>
           <div class="d-flex align-items-center gap-2 mb-3"><span class="live-d"></span><span style="font-size:12px;color:#10b981">All operational · 99.98% uptime</span></div>
-          <div class="d-flex gap-2">
-            <a href="#" class="btn btn-sm btn-outline-secondary px-2 py-1" style="font-size:11px"><i class="bi bi-github me-1"></i>GitHub</a>
-            <a href="#" class="btn btn-sm btn-outline-secondary px-2 py-1" style="font-size:11px"><i class="bi bi-book me-1"></i>Docs</a>
-          </div>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <div class="ft-h mb-2">Platform</div>
           <div class="d-flex flex-column gap-2">
-            <a class="ft-l" href="#" onclick="go('dash');return false"><i class="bi bi-grid me-1"></i>Dashboard</a>
-            <a class="ft-l" href="#" onclick="go('servers');return false"><i class="bi bi-hdd-stack me-1"></i>Servers</a>
-            <a class="ft-l" href="#" onclick="go('logs');return false"><i class="bi bi-journal-text me-1"></i>Logs</a>
-            <a class="ft-l" href="#" onclick="go('alerts');return false"><i class="bi bi-bell me-1"></i>Alerts</a>
+            <a class="ft-l" href="#">Dashboard</a>
+            <a class="ft-l" href="#">Servers</a>
+            <a class="ft-l" href="#">Logs</a>
+            <a class="ft-l" href="#">Alerts</a>
           </div>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <div class="ft-h mb-2">Resources</div>
           <div class="d-flex flex-column gap-2">
-            <a class="ft-l" href="#"><i class="bi bi-book me-1"></i>Docs</a>
-            <a class="ft-l" href="#"><i class="bi bi-code-slash me-1"></i>API</a>
-            <a class="ft-l" href="#"><i class="bi bi-terminal me-1"></i>CLI</a>
-            <a class="ft-l" href="#"><i class="bi bi-check-circle me-1"></i>Status</a>
+            <a class="ft-l" href="#">Docs</a>
+            <a class="ft-l" href="#">API</a>
+            <a class="ft-l" href="#">CLI</a>
+            <a class="ft-l" href="#">Status</a>
           </div>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <div class="ft-h mb-2">Company</div>
           <div class="d-flex flex-column gap-2">
-            <a class="ft-l" href="#"><i class="bi bi-info-circle me-1"></i>About</a>
-            <a class="ft-l" href="#"><i class="bi bi-shield me-1"></i>Security</a>
-            <a class="ft-l" href="#"><i class="bi bi-lock me-1"></i>Privacy</a>
-            <a class="ft-l" href="#"><i class="bi bi-envelope me-1"></i>Contact</a>
+            <a class="ft-l" href="#">About</a>
+            <a class="ft-l" href="#">Security</a>
+            <a class="ft-l" href="#">Privacy</a>
+            <a class="ft-l" href="#">Contact</a>
           </div>
         </div>
         <div class="col-md-6 col-lg-2">
-          <div class="ft-h mb-2">Newsletter</div>
-          <p style="font-size:12px;color:#475569;margin-bottom:10px">Updates on new features.</p>
-          <div class="input-group input-group-sm mb-2">
-            <input type="email" class="form-control fd" placeholder="you@email.com" id="nlEm">
-            <button class="btn btn-primary btn-sm px-2" onclick="newsletter()"><i class="bi bi-send"></i></button>
+          <div class="ft-h mb-2">Tech Stack</div>
+          <div class="d-flex flex-column gap-2" style="font-size:11px">
+            <span class="ft-t">HTML 5</span>
+            <span class="ft-t">CSS 3</span>
+            <span class="ft-t">Bootstrap 5</span>
           </div>
         </div>
       </div>
@@ -447,9 +331,9 @@
            style="border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:#334155">
         <span>© 2026 ServerPanel Inc.</span>
         <div class="d-flex gap-2">
-          <span class="ft-t">v4.2.1</span>
+          <span class="ft-t">v1.0.0</span>
           <span class="ft-t"><i class="bi bi-bootstrap me-1"></i>Bootstrap 5</span>
-          <span class="ft-t">External CSS+JS</span>
+          <span class="ft-t">Pure HTML + CSS</span>
         </div>
       </div>
     </footer>
@@ -458,6 +342,5 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
